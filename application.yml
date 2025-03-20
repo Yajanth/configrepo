@@ -20,8 +20,8 @@ management:
 
 info:
   app:
-    name: "Citizen Service Portal"
-    description: "This service is used to register, authenticate citizens for casting votes"
+    name: "Citizen Service Portal- Config Server"
+    description: "This service is used to register, authenticate citizens for casting votes, config Server"
 
 logging:
   level:
