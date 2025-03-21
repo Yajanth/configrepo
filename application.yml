@@ -1,1 +1,21 @@
-some-key : some-value
+spring:
+  application:
+    name: Config-Server
+
+logging:
+  level:
+    root: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "Citizen Service Portal"
+    description: "This service is used to register, authenticate citizens for casting votes"
