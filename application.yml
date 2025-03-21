@@ -1,0 +1,29 @@
+# application.yml (Global Configuration)
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "Citizen Service Portal"
+    description: "This service is used to register, authenticate citizens for casting votes"
+
+logging:
+  level:
+    root: INFO
+
+server:
+  port: 9092
+
