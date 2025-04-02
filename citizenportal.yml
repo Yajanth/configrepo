@@ -21,3 +21,36 @@ info:
   app:
     name: "Citizen Service Portal"
     description: "This service is used to register, authenticate citizens for casting votes_ After Config"
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      externalService:
+        failureRateThreshold: 50
+        slowCallRateThreshold: 50
+        slowCallDurationThreshold: 2000ms
+        waitDurationInOpenState: 5000ms
+        permittedNumberOfCallsInHalfOpenState: 2
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+  retry:
+    instances:
+      retryService:
+        maxAttempts: 3
+        waitDuration: 1000ms
+  ratelimiter:
+    instances:
+      rateLimiterService:
+        limitForPeriod: 2
+        limitRefreshPeriod: 5s
+        timeoutDuration: 1000ms
+  bulkhead:
+    instances:
+      bulkheadService:
+        maxConcurrentCalls: 2
+        maxWaitDuration: 1000ms
+  timelimiter:
+    instances:
+      timeLimiterService:
+        timeoutDuration: 3s
