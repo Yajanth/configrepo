@@ -14,8 +14,13 @@ management:
      enabled: True
 info:
  app:
-   name :  "My First Spring Boot app"
-   description: "This is super demo appliction of springboot"
+   name :  "Polling Service"
+   description: "This this service handles candiadtes and voting to candidates."
 
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ 
 
 
