@@ -1,0 +1,15 @@
+management:
+ endpoints:
+   web:
+     exposure:
+       include: "*"
+ info:
+   env:
+     enabled: True
+info:
+ app:
+   name :  "My First Spring Boot app"
+   description: "This is super demo appliction of springboot"
+
+
+
